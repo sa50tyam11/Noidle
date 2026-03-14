@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>𐌍Ꝋ𐌉𐌃𐌋𐌄 · Tech Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
+  <canvas id="pixelCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">𐌍Ꝋ𐌉𐌃𐌋𐌄</span>
+        <span class="logo-bracket">]</span>
+        <span class="logo-blink">_</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">// about</a></li>
+        <li><a href="#features">// features</a></li>
+        <li><a href="#channels">// channels</a></li>
+        <li><a href="#join">// join</a></li>
+      </ul>
+      <a href="https://discord.gg/s2fnGZxgNV" target="_blank" class="pixel-btn nav-cta">JOIN SERVER</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag" id="heroTag">
+        <span class="tag-dot"></span>
+        30 ONLINE &nbsp;•&nbsp; 78 MEMBERS &nbsp;•&nbsp; EST. FEB 2026
+      </div>
+
+      <div class="hero-pfp-wrap" id="heroPfp">
+        <div class="pfp-ring"></div>
+        <div class="pfp-ring pfp-ring-2"></div>
+        <img
+          src="From_Main_Klickpin_CF-_kitco_-_75wPo3Rw7.gif"
+          alt="NOIDLE Server"
+          class="hero-pfp"
+          onerror="this.style.display='none';document.querySelector('.pfp-fallback').style.display='flex'"
+        />
+        <div class="pfp-fallback">𐌍</div>
+      </div>
+
+      <h1 class="hero-title" id="heroTitle">
+        <span class="glitch" data-text="𐌍Ꝋ𐌉𐌃𐌋𐌄">𐌍Ꝋ𐌉𐌃𐌋𐌄</span>
+      </h1>
+
+      <p class="hero-sub" id="heroSub">
+        <span class="type-text" id="typeText"></span><span class="type-cursor">█</span>
+      </p>
+
+      <div class="hero-pills" id="heroPills">
+        <span class="pill">⚡ DSA Sessions</span>
+        <span class="pill">🏆 LeetCode Grind</span>
+        <span class="pill">🔒 Cybersecurity</span>
+        <span class="pill">🤖 AI / ML</span>
+        <span class="pill">🌐 Web Dev</span>
+      </div>
+
+      <div class="hero-actions" id="heroActions">
+        <a href="https://discord.gg/s2fnGZxgNV" target="_blank" class="pixel-btn btn-lg btn-primary">
+          <svg width="18" height="14" viewBox="0 0 20 15" fill="none"><path d="M17 1.2C15.7.58 14.16.2 12.65.2l-.24.5c1.63.4 3.08 1.04 4.35 1.88C14.6 1.64 12.82 1.2 10.8 1.2s-3.8.44-5.86 1.38C6.31 1.74 7.76 1.1 9.39.7L9.15.2C7.64.2 6.1.58 4.65 1.2A22.6 22.6 0 0 0 2.4 12.76a.9.9 0 0 0 .32.44C4.08 14.5 5.95 14.2 7.53 13.33c-.38-.5-.7-1.04-.98-1.6C5.7 12.33 4.73 12.5 3.9 12.2c.35-2.5 1.3-5.13 2.7-7 1.36-.87 2.78-1.4 4.3-1.4s2.94.53 4.3 1.4c1.4 1.87 2.35 4.5 2.7 7-.83.3-1.8.13-2.65-.47a8.7 8.7 0 0 1-.98 1.6c1.58.87 3.45 1.17 4.81-.13a.9.9 0 0 0 .32-.44A22.6 22.6 0 0 0 17 1.2Z" fill="currentColor"/></svg>
+          GO TO SERVER
+        </a>
+        <a href="#about" class="pixel-btn btn-lg btn-ghost">EXPLORE ▾</a>
+      </div>
+
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-box">
+          <div class="stat-num" data-target="78">0</div>
+          <div class="stat-lbl">MEMBERS</div>
+        </div>
+        <div class="stat-sep">://</div>
+        <div class="stat-box">
+          <div class="stat-num" data-target="30">0</div>
+          <div class="stat-lbl">ONLINE</div>
+        </div>
+        <div class="stat-sep">://</div>
+        <div class="stat-box">
+          <div class="stat-num" data-target="12">0</div>
+          <div class="stat-lbl">CHANNELS</div>
+        </div>
+        <div class="stat-sep">://</div>
+        <div class="stat-box">
+          <div class="stat-num">∞</div>
+          <div class="stat-lbl">GRIND</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pixel-deco deco-corner-br">▓▒░▒▓</div>
+    <div class="pixel-deco deco-neon">BE RIGHT BACK</div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-inner">
+      <span>DSA</span><span class="msep">▸</span>
+      <span>LEETCODE</span><span class="msep">▸</span>
+      <span>WEB DEV</span><span class="msep">▸</span>
+      <span>AI / ML</span><span class="msep">▸</span>
+      <span>CYBERSECURITY</span><span class="msep">▸</span>
+      <span>OPEN SOURCE</span><span class="msep">▸</span>
+      <span>SYSTEM DESIGN</span><span class="msep">▸</span>
+      <span>REACT</span><span class="msep">▸</span>
+      <span>PYTHON</span><span class="msep">▸</span>
+      <span>C++</span><span class="msep">▸</span>
+      <span>DSA</span><span class="msep">▸</span>
+      <span>LEETCODE</span><span class="msep">▸</span>
+      <span>WEB DEV</span><span class="msep">▸</span>
+      <span>AI / ML</span><span class="msep">▸</span>
+      <span>CYBERSECURITY</span><span class="msep">▸</span>
+      <span>OPEN SOURCE</span><span class="msep">▸</span>
+      <span>SYSTEM DESIGN</span><span class="msep">▸</span>
+      <span>REACT</span><span class="msep">▸</span>
+      <span>PYTHON</span><span class="msep">▸</span>
+      <span>C++</span><span class="msep">▸</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="sec-tag">// 00. ABOUT</div>
+        <h2>What is <span class="neon-text">𐌍Ꝋ𐌉𐌃𐌋𐌄</span>?</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>👋 Welcome to the Server! Glad to have you here.</p>
+          <p>This community is focused on <span class="highlight">learning, building, and growing</span> in tech together. 💻</p>
+          <p>Whether you're grinding LeetCode at 2AM, debugging a weird CSS bug, or exploring the latest LLM papers — this is your crew.</p>
+          <div class="about-badge-row">
+            <span class="badge badge-green">● ACTIVE</span>
+            <span class="badge badge-purple">EST. FEB 2026</span>
+            <span class="badge badge-pink">TECH FOCUSED</span>
+          </div>
+        </div>
+        <div class="about-terminal">
+          <div class="terminal-bar">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="t-title">noidle@terminal:~</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></div>
+            <div class="t-line t-out">𐌍Ꝋ𐌉𐌃𐌋𐌄 Tech Community</div>
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat members.txt</span></div>
+            <div class="t-line t-out">78 builders, learners &amp; grinders</div>
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">ls ./activities</span></div>
+            <div class="t-line t-out">dsa_sessions/&nbsp;&nbsp;leetcode_sundays/</div>
+            <div class="t-line t-out">webdev_collab/&nbsp;&nbsp;ai_ml_talks/</div>
+            <div class="t-line t-out">cybersec_drops/&nbsp;&nbsp;resource_hub/</div>
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor-term">█</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="sec-tag">// 01. FEATURES</div>
+        <h2>What we <span class="neon-text">do</span> here</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card reveal">
+          <div class="feat-icon">⚡</div>
+          <div class="feat-title">DSA / Problem Solving</div>
+          <p class="feat-desc">Regular sessions where we break down algorithms together. Trees, graphs, DP — no concept is too hard when you tackle it as a crew.</p>
+          <div class="feat-tag">SESSIONS</div>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">🏆</div>
+          <div class="feat-title">Weekly LeetCode Grind</div>
+          <p class="feat-desc">Every Sunday we post a challenge. Solve it solo or collaboratively. Track your streak, compete, get better every week.</p>
+          <div class="feat-tag">SUNDAYS</div>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">🌐</div>
+          <div class="feat-title">Web Dev Discussions</div>
+          <p class="feat-desc">From vanilla JS to the latest frameworks. Share projects, get feedback, debug together, and stay current.</p>
+          <div class="feat-tag">WEB DEV</div>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">🤖</div>
+          <div class="feat-title">AI / ML Talks</div>
+          <p class="feat-desc">Paper discussions, model experiments, prompt engineering — the AI space moves fast and we keep up together.</p>
+          <div class="feat-tag">AI/ML</div>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">🔒</div>
+          <div class="feat-title">Cybersecurity</div>
+          <p class="feat-desc">CTF walkthroughs, security concepts, ethical hacking resources. Learn to think like an attacker.</p>
+          <div class="feat-tag">SECURITY</div>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-icon">📦</div>
+          <div class="feat-title">Resource Sharing</div>
+          <p class="feat-desc">Courses, repos, articles, roadmaps — curated by the community. No spam, only signal.</p>
+          <div class="feat-tag">RESOURCES</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANNELS -->
+  <section id="channels">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="sec-tag">// 02. CHANNELS</div>
+        <h2>Inside the <span class="neon-text">server</span></h2>
+      </div>
+      <div class="channels-wrap reveal">
+        <div class="discord-preview">
+          <div class="discord-sidebar">
+            <div class="sidebar-header">
+              <span class="server-icon-sm">𐌍</span>
+              <span>𐌍Ꝋ𐌉𐌃𐌋𐌄</span>
+            </div>
+            <div class="channel-group">
+              <div class="ch-group-label">▾ INFORMATION</div>
+              <div class="ch-item active"><span class="ch-hash">#</span> welcome</div>
+              <div class="ch-item"><span class="ch-hash">#</span> rules</div>
+              <div class="ch-item"><span class="ch-hash">#</span> announcements</div>
+            </div>
+            <div class="channel-group">
+              <div class="ch-group-label">▾ GENERAL</div>
+              <div class="ch-item"><span class="ch-hash">#</span> general</div>
+              <div class="ch-item"><span class="ch-hash">#</span> introductions</div>
+              <div class="ch-item"><span class="ch-hash">#</span> off-topic</div>
+            </div>
+            <div class="channel-group">
+              <div class="ch-group-label">▾ LEARNING</div>
+              <div class="ch-item"><span class="ch-hash">#</span> dsa-grinding <span class="ch-badge">NEW</span></div>
+              <div class="ch-item"><span class="ch-hash">#</span> leetcode-weekly <span class="ch-badge hot">HOT</span></div>
+              <div class="ch-item"><span class="ch-hash">#</span> web-dev</div>
+              <div class="ch-item"><span class="ch-hash">#</span> ai-ml</div>
+              <div class="ch-item"><span class="ch-hash">#</span> cybersecurity</div>
+            </div>
+            <div class="channel-group">
+              <div class="ch-group-label">▾ RESOURCES</div>
+              <div class="ch-item"><span class="ch-hash">#</span> resources</div>
+              <div class="ch-item"><span class="ch-hash">#</span> progress-updates</div>
+              <div class="ch-item"><span class="ch-hash">#</span> showcase</div>
+            </div>
+          </div>
+          <div class="discord-main">
+            <div class="dm-header"><span class="ch-hash">#</span> general <span class="dm-status">78 members</span></div>
+            <div class="dm-messages">
+              <div class="dm-msg">
+                <div class="dm-avatar" style="background:#7c3aed">A</div>
+                <div>
+                  <span class="dm-user" style="color:#a78bfa">alex.dev</span>
+                  <span class="dm-time">Today at 9:41 PM</span>
+                  <div class="dm-text">just solved two-sum in O(n) using hashmap 🔥</div>
+                </div>
+              </div>
+              <div class="dm-msg">
+                <div class="dm-avatar" style="background:#0e7490">S</div>
+                <div>
+                  <span class="dm-user" style="color:#67e8f9">sara.ui</span>
+                  <span class="dm-time">Today at 9:42 PM</span>
+                  <div class="dm-text">bro i was stuck on that for 30 mins 💀</div>
+                </div>
+              </div>
+              <div class="dm-msg">
+                <div class="dm-avatar" style="background:#065f46">R</div>
+                <div>
+                  <span class="dm-user" style="color:#6ee7b7">r4m.codes</span>
+                  <span class="dm-time">Today at 9:43 PM</span>
+                  <div class="dm-text">Sunday LeetCode is up in #leetcode-weekly 👀</div>
+                </div>
+              </div>
+              <div class="dm-msg">
+                <div class="dm-avatar" style="background:#7c2d12">K</div>
+                <div>
+                  <span class="dm-user" style="color:#fdba74">kai</span>
+                  <span class="dm-time">now</span>
+                  <div class="dm-text"><span class="typing-dots"><span>.</span><span>.</span><span>.</span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="dm-input">Message #general</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN CTA -->
+  <section id="join">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="cta-scanline"></div>
+        <div class="cta-content">
+          <div class="cta-text-block">
+            <div class="sec-tag" style="margin-bottom:12px">// READY TO JOIN?</div>
+            <h2 class="cta-title">
+              Stop lurking.<br>
+              <span class="neon-text">Start building.</span>
+            </h2>
+            <p class="cta-desc">78 builders are already in. Your next collaborator, mentor, or LeetCode rival is one click away.</p>
+          </div>
+          <div class="cta-right">
+            <div class="invite-card">
+              <div class="inv-header">
+                <div class="inv-pfp">
+                  <img src="From_Main_Klickpin_CF-_kitco_-_75wPo3Rw7.gif" alt="Server" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                  <div class="inv-pfp-fallback">𐌍</div>
+                </div>
+                <div>
+                  <div class="inv-name">𐌍Ꝋ𐌉𐌃𐌋𐌄</div>
+                  <div class="inv-meta">
+                    <span class="green-dot">●</span> 30 Online &nbsp;
+                    <span style="color:#6b7280">●</span> 78 Members
+                  </div>
+                </div>
+              </div>
+              <a href="https://discord.gg/s2fnGZxgNV" target="_blank" class="pixel-btn btn-join">
+                JOIN SERVER ↗
+              </a>
+              <div class="inv-link">discord.gg/s2fnGZxgNV</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>𐌍Ꝋ𐌉𐌃𐌋𐌄<span class="logo-bracket">]</span>
+      </div>
+      <div class="footer-copy">LEARNING • BUILDING • GROWING &nbsp;//&nbsp; EST. FEB 2026</div>
+      <a href="https://discord.gg/s2fnGZxgNV" target="_blank" class="footer-discord">DISCORD ↗</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
